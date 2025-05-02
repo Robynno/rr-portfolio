@@ -1,0 +1,267 @@
+/*.css */
+/*── Color & Typography ─────────────────────────────────────────────────────*/
+:root {
+  --neutral-sand: #f5eae1;
+  --neutral-clay: #d8c3a5;
+  --neutral-blush: #ffe5e5;
+  --accent-blue: #005a9c;
+  --accent-gold: #e0a800;
+  --bg-light: #ffffff;
+
+  --font-body: "Inter", sans-serif;
+  --font-heading: "Playfair Display", serif;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  font-family: var(--font-body);
+  background: var(--bg-light);
+  color: #333;
+  line-height: 1.6;
+}
+
+/*── Containers & Sections ─────────────────────────────────────────────────*/
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+.section {
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+}
+
+.bg-light {
+  background: var(--neutral-sand);
+}
+
+/*── Header & Nav ─────────────────────────────────────────────────────────*/
+.site-header {
+  background: var(--neutral-blush);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--accent-blue);
+  text-decoration: none;
+}
+
+.nav-links a {
+  margin-left: 1.5rem;
+  font-weight: 600;
+  color: #333;
+  text-decoration: none;
+}
+.nav-links a:hover {
+  color: var(--accent-blue);
+  text-decoration: underline;
+}
+
+/*── Headings ──────────────────────────────────────────────────────────────*/
+.section-title {
+  font-family: var(--font-heading);
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  color: var(--accent-gold);
+  text-align: center;
+}
+
+/*── Split layout for Overview ─────────────────────────────────────────────*/
+.split {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+.text-block {
+  flex: 1 1 300px;
+}
+.image-block {
+  flex: 1 1 300px;
+}
+.image-block img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 8px;
+  border: 1px solid var(--accent-blue);
+}
+.image-block img:hover {
+ border: 5px solid var(--accent-blue);
+
+}
+
+/*── Cards Grid  ────────────────────────────────────────*/
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);  /* four equal columns */
+  gap: 2rem;                              /* space between cards */
+}
+
+.card {
+  background: var(--neutral-blush);
+  border: 1px solid var(--neutral-clay);
+  border-radius: 8px;
+  padding: 1.5rem;
+  text-align: center;
+}
+.card h3 {
+  font-family: var(--font-heading);
+  margin-bottom: 0.75rem;
+  color: var(--accent-blue);
+}
+/* Image can overflow */
+.cards-grid .card {
+  overflow: visible;
+  position: relative;
+}
+
+/* transition */
+.cards-grid .card img {
+  display: block;
+  width: 100%;
+  height: auto;
+  transition: transform 0.3s ease-in-out,
+              box-shadow 0.3s ease-in-out;
+}
+
+
+.cards-grid .card:hover img {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(1.05); 
+  max-width: 60%;   
+  max-height: 60%;
+  z-index: 1000;
+  box-shadow: 0 12px 24px rgba(0,0,0,0.4);
+  cursor: zoom-out;
+  pointer-events: none;  
+}
+
+/* Backdrop overlay behind the image */
+.cards-grid .card:hover::before {
+  content: "";
+  position: fixed;
+  top: 0; left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0,0,0,0.3);
+  z-index: 900;
+  pointer-events: none;  
+}
+
+/* <CARD GRIDEERRRR ISSUES */
+.cards-grider {
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(280px,1fr));
+  gap: 2rem;
+}
+.carder {
+  background: var(--neutral-blush);
+  border: 1px solid var(--neutral-clay);
+  border-radius: 8px;
+  padding: 1.5rem;
+  text-align: center;
+}
+.carder h3 {
+  font-family: var(--font-heading);
+  margin-bottom: 0.75rem;
+  color: var(--accent-blue);
+}
+
+/* <CARD GRIDEERRRR ACROSS SCREEEN  */
+.cards-gridn {
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(280px,1fr));
+  gap: 2rem;
+}
+.cardn {
+  background: var(--neutral-blush);
+  border: 1px solid var(--neutral-clay);
+  border-radius: 8px;
+  padding: 1.5rem;
+  text-align: center;
+}
+.cardn h3 {
+  font-family: var(--font-heading);
+  margin-bottom: 0.75rem;
+  color: var(--accent-blue);
+}
+.cardn img {
+  width: 100%;
+  height: auto;
+  margin-top: 1rem;
+  border-radius: 4px;
+}
+
+
+
+
+/*── Full-width Image for Redesign Preview ───────────────────────────────*/
+.image-full {
+  margin-top: 2rem;
+}
+.image-full img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  border: 1px solid var(--accent-blue);
+}
+
+.image-full img:hover {
+border: 5px solid var(--accent-blue);
+}
+
+/*── Buttons ──────────────────────────────────────────────────────────────*/
+.btn {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  font-weight: 600;
+  border-radius: 9999px;
+  text-decoration: none;
+}
+.btn-primary {
+  background: var(--accent-blue);
+  color: #fff;
+}
+.btn-primary:hover {
+  background: #004080;
+}
+
+/*── Footer ────────────────────────────────────────────────────────────────*/
+.site-footer {
+  background: var(--neutral-clay);
+  padding: 1.5rem 0;
+  color: #fff;
+}
+
+/*── Responsive tweaks ────────────────────────────────────────────────────*/
+@media (max-width: 768px) {
+  .split {
+    flex-direction: column;
+  }
+}
