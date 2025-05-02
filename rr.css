@@ -117,7 +117,7 @@ body {
 .cards-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);  /* four equal columns */
-  gap: 2rem;                              /* space between cards */
+  gap: 2rem;                             
 }
 
 .card {
@@ -264,4 +264,24 @@ border: 5px solid var(--accent-blue);
   .split {
     flex-direction: column;
   }
+}
+header nav .nav-links {
+  margin-left: auto;
+  display: flex;
+  gap: 1.5rem; 
+}
+
+header nav .back-link {
+  font-family: var(--font-body);
+  color: var(--accent-blue);
+  text-decoration: none;
+  font-weight: 600;
+  margin-right: 1.5rem;
+}
+header nav .back-link:hover {
+  text-decoration: underline;
+}
+
+header nav .logo {
+  margin-right: 2rem;
 }
